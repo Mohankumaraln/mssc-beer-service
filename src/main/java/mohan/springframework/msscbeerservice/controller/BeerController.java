@@ -1,4 +1,4 @@
-package mohan.springframework.msscbeerservice;
+package mohan.springframework.msscbeerservice.controller;
 
 import mohan.springframework.msscbeerservice.web.model.BeerDto;
 import org.springframework.http.HttpStatus;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/beer")
-public class Controller {
+public class BeerController {
 
     @GetMapping({"/{beerId}"})
-    public ResponseEntity<BeerDto> getBeerById(@PathVariable Long beerId){
+    public ResponseEntity<BeerDto> getBeerById(@PathVariable String beerId){
         //Todo
         return new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.OK);
     }
@@ -22,7 +22,7 @@ public class Controller {
     }
 
     @PutMapping({"/{beerId}"})
-    public  ResponseEntity updateBeerById(@RequestBody BeerDto beerDto, @PathVariable Long beerId){
+    public  ResponseEntity updateBeerById(@RequestBody BeerDto beerDto, @PathVariable String beerId){
         //Todo
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
