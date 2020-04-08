@@ -16,14 +16,25 @@ import java.util.UUID;
 @Builder
 @Entity
 public class Beer {
-   @Id
-   @GeneratedValue(generator = "UUID")
-   @GenericGenerator(name = "UUID",strategy = "org.hibernate.id.UUIDGenerator")
-   @Column(length = 36,columnDefinition = "varchar", updatable = false,nullable = false)
-   private UUID id;
+//   @Id
+//   @GeneratedValue(generator = "UUID")
+//
+//   //org.hibernate.id.UUIDGenerator
+//   @GenericGenerator(name = "UUID",strategy = "org.hibernate.id.UUIDGenerator")
+//   @Column(length = 36,columnDefinition = "varchar", updatable = false,nullable = false)
+//   private UUID id;
+@Id
+@GeneratedValue(generator = "uuid2")
+@GenericGenerator(name = "uuid2", strategy = "uuid2")
+@Column(columnDefinition = "BINARY(16)")
+private UUID id;
 
    @Version //optimistic locking.
    private Long version;
+
+   //@Column(length = 36,columnDefinition = "varchar", updatable = false,nullable = false)
+   @Column
+   private String beerName;
 
    @CreationTimestamp
    @Column(updatable = false)
@@ -34,6 +45,10 @@ public class Beer {
 
    @Column(unique = true)
    private Long UPC;
+   @Column
    private BigDecimal price;
+   @Column
    private Integer minOnHand;
+   @Column
+   private Integer quantityToBrew;
 }
