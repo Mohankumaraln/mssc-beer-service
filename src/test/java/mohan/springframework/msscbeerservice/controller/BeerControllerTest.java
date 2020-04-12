@@ -1,6 +1,7 @@
 package mohan.springframework.msscbeerservice.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import mohan.springframework.msscbeerservice.bootstrap.BeerLoader;
 import mohan.springframework.msscbeerservice.services.BeerService;
 import mohan.springframework.msscbeerservice.web.model.BeerDto;
 import mohan.springframework.msscbeerservice.web.model.BeerStyleEnum;

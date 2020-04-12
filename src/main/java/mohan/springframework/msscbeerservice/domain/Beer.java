@@ -10,6 +10,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.UUID;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -48,7 +49,7 @@ private UUID id;
    private Timestamp lastModifiedDate;
 
    @Column(unique = true)
-   private Long UPC;
+   private String UPC;
    @Column
    private BigDecimal price;
    @Column
