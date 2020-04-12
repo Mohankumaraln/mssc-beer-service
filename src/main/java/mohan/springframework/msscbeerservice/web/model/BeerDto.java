@@ -1,5 +1,6 @@
 package mohan.springframework.msscbeerservice.web.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,9 +23,13 @@ public class BeerDto {
     private UUID id;
     @Null
     private  Integer version;
+
     @Null
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssZ", shape =JsonFormat.Shape.STRING )
     private OffsetDateTime createDate;
+
     @Null
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssZ", shape =JsonFormat.Shape.STRING )
     private  OffsetDateTime lastModifiedDate;
     @NotBlank
     private String beerName;
@@ -34,7 +39,7 @@ public class BeerDto {
     @Positive
     @NotNull
     private Long UPC;
-
+    @JsonFormat(shape =JsonFormat.Shape.STRING)
     @Positive
     @NotNull
     private BigDecimal price;

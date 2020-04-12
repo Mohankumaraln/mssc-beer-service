@@ -1,6 +1,7 @@
 package mohan.springframework.msscbeerservice.domain;
 
 import lombok.*;
+import mohan.springframework.msscbeerservice.web.model.BeerStyleEnum;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -35,6 +36,9 @@ private UUID id;
    //@Column(length = 36,columnDefinition = "varchar", updatable = false,nullable = false)
    @Column
    private String beerName;
+
+   @Column
+   private BeerStyleEnum beerStyle;
 
    @CreationTimestamp
    @Column(updatable = false)
